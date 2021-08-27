@@ -1,0 +1,34 @@
+<div class="container">
+  <app-alert
+    *ngIf="errorMessage"
+    [message]="errorMessage"
+    (close)="onHandleError()"
+  ></app-alert>
+
+  <div class="dataDiv" *ngIf="dataLoaded | async">
+    <div class="backButton" (click)="onHomeClick()">HOME</div>
+    <h2>State Wise Data</h2>
+    <div class="tableDiv">
+      <table class="dataTable">
+        <thead>
+          <tr>
+            <th>State/UT</th>
+            <th>Confirmed</th>
+            <th>Active</th>
+            <th>Recovered</th>
+            <th>Deceased</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let state of statesData">
+            <td [textContent]="state.stateName"></td>
+            <td>{{ state.confirmedCases }}</td>
+            <td>{{ state.confirmedCases - state.recovered - state.deaths }}</td>
+            <td>{{ state.recovered }}</td>
+            <td>{{ state.deaths }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

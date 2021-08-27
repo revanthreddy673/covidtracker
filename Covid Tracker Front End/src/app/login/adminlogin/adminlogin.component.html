@@ -1,0 +1,41 @@
+<div class="container">
+  <app-alert
+    [message]="errorMessage"
+    *ngIf="errorMessage"
+    (close)="onHandleError()"
+  ></app-alert>
+
+  <div class="formDiv">
+    <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()">
+      <div class="form-rows">
+        <div class="labels">
+          <label for="email">Email : </label>
+        </div>
+        <div class="fields">
+          <input
+            type="email"
+            id="email"
+            class="input-fields"
+            placeholder="Please enter your email"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div class="form-rows">
+        <div class="labels">
+          <label for="password">Password : </label>
+        </div>
+        <div class="fields">
+          <input
+            type="password"
+            id="password"
+            class="input-fields"
+            placeholder="Please enter your password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <button class="btn" [disabled]="!adminLoginForm.valid">Login</button>
+    </form>
+  </div>
+</div>

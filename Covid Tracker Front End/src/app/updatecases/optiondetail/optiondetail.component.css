@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  background-color: #696969;
+  position: relative;
+  height: 90vh;
+}
+
+.totalCases {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  background: white;
+  color: #2b24ad;
+  font-size: 120%;
+  font-weight: 400;
+  width: 25%;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.4s, border 0.4s, color 0.4s;
+}
+
+.dailyCases {
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  background: white;
+  font-size: 120%;
+  font-weight: 400;
+  color: #2b24ad;
+  width: 25%;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.4s, border 0.4s, color 0.4s;
+}
+
+.totalCases:hover,
+.dailyCases:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}

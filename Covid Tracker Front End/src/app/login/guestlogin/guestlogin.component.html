@@ -1,0 +1,27 @@
+<div class="container">
+  <app-alert
+    [message]="errorMessage"
+    *ngIf="errorMessage"
+    (close)="onHandleError()"
+  ></app-alert>
+
+  <div class="formDiv">
+    <form [formGroup]="guestLoginForm" (ngSubmit)="onSubmit()">
+      <div class="form-rows">
+        <div class="labels">
+          <label for="email">Email : </label>
+        </div>
+        <div class="fields">
+          <input
+            type="email"
+            id="email"
+            class="input-fields"
+            placeholder="Please enter your email"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <button class="btn" [disabled]="!guestLoginForm.valid">Login</button>
+    </form>
+  </div>
+</div>

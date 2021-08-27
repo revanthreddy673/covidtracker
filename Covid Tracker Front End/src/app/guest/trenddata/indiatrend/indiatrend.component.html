@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="stateselection" (click)="onHomeClick()">Home</div>
+  <div class="labels">
+    <div class="individualLabel" *ngFor="let label of labels; let i = index">
+      <span class="colorSpan lineSpan" [ngStyle]="getBackgroundForSpan(i)"></span>
+      <span class="colorSpan circleSpan" [ngStyle]="getBorderForSpan(i)"></span>
+      <span class="colorSpan lineSpan" [ngStyle]="getBackgroundForSpan(i)"></span>
+      {{ label }}
+    </div>
+  </div>
+  <div class="trendchart"></div>
+</div>

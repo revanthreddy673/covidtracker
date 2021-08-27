@@ -1,0 +1,69 @@
+<div class="container">
+  <app-alert
+    *ngIf="message"
+    [message]="message"
+    (close)="onCloseAlert()"
+  ></app-alert>
+
+  <div class="formDiv">
+    <form [formGroup]="totalCasesForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-rows">
+        <div class="labels">
+          <label for="state">State :</label>
+        </div>
+        <div class="fields">
+          <input
+            type="text"
+            id="state"
+            class="input-fields"
+            placeholder="Please enter state name"
+            formControlName="state"
+          />
+        </div>
+      </div>
+      <div class="form-rows">
+        <div class="labels">
+          <label for="Confirmed">Total Confirmed Cases :</label>
+        </div>
+        <div class="fields">
+          <input
+            type="number"
+            id="Confirmed"
+            class="input-fields"
+            placeholder="Please enter confirmed cases"
+            formControlName="confirmedcases"
+          />
+        </div>
+      </div>
+      <div class="form-rows">
+        <div class="labels">
+          <label for="deaths">Total Deaths :</label>
+        </div>
+        <div class="fields">
+          <input
+            type="number"
+            id="deaths"
+            class="input-fields"
+            placeholder="Please enter number of deaths"
+            formControlName="deaths"
+          />
+        </div>
+      </div>
+      <div class="form-rows">
+        <div class="labels">
+          <label for="recovered">Total Recovered :</label>
+        </div>
+        <div class="fields">
+          <input
+            type="number"
+            id="recovered"
+            class="input-fields"
+            placeholder="Please enter number of recovered"
+            formControlName="recovered"
+          />
+        </div>
+      </div>
+      <button class="btn" [disabled]="!totalCasesForm.valid">Submit</button>
+    </form>
+  </div>
+</div>
